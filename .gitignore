@@ -1,2 +1,5 @@
 .env
 env/
+mysite/package-lock.json
+mysite/node_modules
+mysite/package.json
