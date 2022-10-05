@@ -3,3 +3,4 @@ env/
 mysite/package-lock.json
 mysite/node_modules
 mysite/package.json
+mysite/myapp/static/myapp/styles.css
