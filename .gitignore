@@ -4,3 +4,9 @@ mysite/package-lock.json
 mysite/node_modules
 mysite/package.json
 mysite/myapp/static/myapp/styles.css
+media
+mysite/db.sqlite3
+mysite/mysite/__pycache__/urls.cpython-310.pyc
+mysite/mysite/__pycache__/settings.cpython-310.pyc
+/__pycache__/*
+mysite/mysite/__pycache__/settings.cpython-310.pyc

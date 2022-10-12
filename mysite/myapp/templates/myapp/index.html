@@ -1,41 +1,16 @@
+{% extends 'myapp/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
-    <title>Products</title>
-</head>
-<body>
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <div>
-                        <a href="#" class="flex items-center px-2 py-4">
-                            <img class="h-16 w-16" src="{% static 'myapp/images/shopping.png' %}" alt="">
-                            <span class="text-gray-500 text-lg font-semibold mt-6">Buy&Sell</span>
-                        </a>
-                    </div>
-                    <div class="items-center flex space-x-1">
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-green">Home</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
-                        <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+{% block content %}
+    
+    
     
     {% for product in products %}
     
     <a href="{% url 'myapp:product_detail' product.id %}">
         {{product.name}} -> {{ product.price }} -> {{ product.desc }}<br>
+        <img src="{{product.image.url}}">
     </a>   
     
     {% endfor %}
-</body>
-</html>
+{% endblock %}
