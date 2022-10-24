@@ -13,14 +13,39 @@
         </div>
     </main>
     <!-- Site hero ends here -->
+
+    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 gap-5">
+        <!-- Card 1 -->
+        {% for product in products %}
+    
+        <a href="{% url 'myapp:product_detail' product.id %}">
+            
+            <div class="rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{{product.image.url}}">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">
+                        {{product.name}}
+                    </div>
+                    <div class="font-bold text-xl text-green-500 mb-2">
+                        ${{ product.price }}
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        {{ product.desc }}
+                    <p>
+                </div>
+            </div>
+            
+            
+            
+        
+        </a> 
+        
+        {% endfor %}  
     
     
-    {% for product in products %}
+
+    </div>
     
-    <a href="{% url 'myapp:product_detail' product.id %}">
-        {{product.name}} -> {{ product.price }} -> {{ product.desc }}<br>
-        <img src="{{product.image.url}}">
-    </a>   
     
-    {% endfor %}
+    
 {% endblock %}
