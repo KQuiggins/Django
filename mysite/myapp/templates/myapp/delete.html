@@ -1,18 +1,20 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-    <h1>Delete Product</h1>
-    <form method="post">
+    <h1 class="text-2xl m-10 font-bold">Delete Product</h1>
+    <form method="post" class="bg-white shadow-md m-10 w-2/5 rounded px-8 pt-6 pb-8 mb-4">
         {% csrf_token %}
-        <div>
-            <label>Are you sure you want to delete this product?</label>
+        <div class="mb-4">
+            <label class="block text-gray-700 tezt-sm font-bold mb-2">Are you sure you want to delete this product?</label>
         </div>
-        <div>
-            <label>{{product.name}}</label>
+        <div class="mb-4">
+            <label class="block text-gray-700 tezt-sm font-bold mb-2">{{product.name}}</label>
         </div>
-        <div>
-            <img src="{{product.image.url}}" alt="">
+        <div class="mb-4">
+            <img class="h-60 w-60 rounded"src="{{product.image.url}}" alt="">
         </div>
-        <input type="submit" name="confirm" id="confirm" value="confirm">
+        <input class="bg-red-500 text-white px-5 py-2 rounded" type="submit" name="confirm" id="confirm" value="confirm">
+
+        <a class="button bg-green-500 text-white px-5 py-3 rounded" href="{% url 'myapp:products' %}">Cancel</a>
     </form>
 {% endblock %}
